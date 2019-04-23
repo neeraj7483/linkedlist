@@ -1,13 +1,18 @@
 package info;
 
-public class LinkedList<T extends Comparable<T> > {
+/**
+ * Class LinkedList is the class for creating and managing <b>generic linked list</b>
+ * <br>only limitation is that the generic type must implement {@link java.lang.Comparable}
+ * @author Rollers
+ * @param <T> Type of Linked list You want to create
+ */
+public class LinkedList<T extends Comparable<T> > extends Node<String> {
 
 	/**
 	 * head of the linked list(i.e. first node)
 	 */
 	private Node<T> head;
 	/** 
-	 <b>insertNode</b>
 	 <br> Will insert a node into the linked list with the given data
 	 @author Rollers
 	 @param data : <br> Value of the node
@@ -34,7 +39,6 @@ public class LinkedList<T extends Comparable<T> > {
 	}
 
 	/** 
-	 <b>printLL</b>
 	 <br> Will print linked list 
 	 @author Rollers
 	 @return does not returns anything
@@ -52,13 +56,12 @@ public class LinkedList<T extends Comparable<T> > {
 	}
 
 	/**
-	 * <b>firstPositionOf</b>
 	 * <br>Will search the given <b>node</b> in the Linked list associated with the caller object with the data = elementData
 	 * <br>and returns the position of its first occurrence
 	 * <br>if the given element is not in the linked list then return <b>-1</b>
 	 * @author Rollers
 	 * @param elementData
-	 * @return int : position of the given elementData
+	 * @return position of the given elementData
 	 */
 	public int firstPositionOf(T elementData)
 	{
@@ -80,7 +83,6 @@ public class LinkedList<T extends Comparable<T> > {
 	}
 	
 	/** 
-	 * <b>reverseLL</b>
 	 *<br> Will reverse the linked list associated with the caller object 
 	 *@author Rollers	
 	 *@return does not returns anything
@@ -100,7 +102,6 @@ public class LinkedList<T extends Comparable<T> > {
 		head = previous;
 	}
 	/** 
-	 <b>insertAfterFirstElementOf</b>
 	 <br> Will insert the <b>node</b>(in the linked list) with data = nodeData 
 	 <br> after the first occurrence of the node with data = elementData.
 	 @author Rollers
@@ -128,7 +129,6 @@ public class LinkedList<T extends Comparable<T> > {
 		}
 	}
 	/** 
-	 <b>insertAfterLastElementOf</b>
 	 <br> Will insert the <b>node</b>(in the linked list associated with the caller object) with data = nodeData 
 	 <br> after the last occurrence of the node with data = elementData.
 	 @author Rollers
@@ -142,8 +142,8 @@ public class LinkedList<T extends Comparable<T> > {
 		insertBeforerElement(elementData, nodeData);
 		reverseLL();
 	}
+	
 	/** 
-	 <b>insertBeforerElement</b>
 	 <br> Will insert the <b>node</b>(in the linked list associated with the caller object) with data = nodeData 
 	 <br> before the first occurrence of the node with data = elementData.
 	 @author Rollers
@@ -180,7 +180,6 @@ public class LinkedList<T extends Comparable<T> > {
 		}
 	}
 	/** 
-	 <b>deleteNode</b>
 	 <br> Will delete the <b>node</b>(from the linked list associated with the caller object) with data = elementData 
 	 @author Rollers
 	 @param elementData : data of the node which is to be deleted.
@@ -205,8 +204,8 @@ public class LinkedList<T extends Comparable<T> > {
 		
 	}
 	/** 
-	 <b>deleteNode</b>
-	 <br> Will delete the first occurrence of the <b>node</b>(from the linked list associated with the caller object) with data = elementData
+	 <br> Will delete the first occurrence of the <b>node</b>(from the linked list associated with the caller object) 
+	 <br>with data = elementData
 	 @author Rollers 
 	 @param elementData : data of the node which is to be deleted.
 	 @return does not returns anything
@@ -218,6 +217,13 @@ public class LinkedList<T extends Comparable<T> > {
 		reverseLL();
 	}
 
+	/**
+	 * Will delete all the occurrences of the <b>node</b> with data = elementData from the 
+	 * @author Rollers
+	 * <br>linked list associated with the caller object 
+	 * @param elementData
+	 * @return does not returns anything
+	 */
 	public void deleteAllOccurences(T elementData)
 	{
 		
@@ -247,7 +253,6 @@ public class LinkedList<T extends Comparable<T> > {
 		}
 	}
 	/**
-	 * <b>getHead</b>
 	 * @author Rollers
 	 * @return {@link} head of the linked list associated with the caller object
 	 */
@@ -256,7 +261,6 @@ public class LinkedList<T extends Comparable<T> > {
 	}
 	 
 	/**
-	 * <b>getHead</b>
 	 * <br>set the head of the linked list associated with the caller object 
 	 * @author Rollers
 	 * @param head : will set the head as start of the linked list

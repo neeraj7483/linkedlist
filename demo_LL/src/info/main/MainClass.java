@@ -1,8 +1,9 @@
 package info.main;
 
 import info.LinkedList;
+import info.Node;
 
-public class MainClass {
+public class MainClass extends Node<String> {
 public static void main(String[] args) {
 	LinkedList<Integer> list1=new LinkedList<Integer>();
 	list1.insertNode(1);
@@ -15,6 +16,9 @@ public static void main(String[] args) {
 	list1.insertNode(7);
 	list1.insertNode(8);
 	list1.printLL();
+	Node<String> ad=new Node() {
+	};
+	
 	System.out.println(list1.firstPositionOf(3));
 	list1.sort();
 	LinkedList<Integer> list2=new LinkedList<Integer>();

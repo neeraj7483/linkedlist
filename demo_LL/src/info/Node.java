@@ -1,7 +1,5 @@
 package info;
 
-
-
 public class Node<T extends Comparable<T>> implements Comparable<Node<T>>{
 	private T data;
 	private Node<T> next;
@@ -9,7 +7,6 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>>{
 	protected Node() {
 
 	}
-
 	protected Node(T data, Node<T> next) {
 		super();
 		this.data = data;
@@ -61,5 +58,6 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>>{
 	public int compareTo(Node<T> o) {
 		return (this.getData().compareTo(o.getData()));
 	}
+	
 
 }
